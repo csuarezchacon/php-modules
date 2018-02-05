@@ -9,12 +9,8 @@
   $db = $database->getConnection();
   $patient = new Patient($db);
 
-  $stmt = $patient->add();
-  $num = $stmt->rowCount();
+  $resp = $patient->add();
 
-  if ($num>0) {
-    echo json_encode(array("message" => "ok"));
-  } else {
-    echo json_encode(array("message" => "error"));
-  }
+  echo json_encode($resp);
+
 ?>

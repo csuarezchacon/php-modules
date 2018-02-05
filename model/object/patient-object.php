@@ -19,6 +19,8 @@
 
 		function add(){
 
+      $resp = array("out_cod" => "0000", "out_msg" => "Registrado");
+      
       $in_fname = "4";
       $in_lname = "4";
       $in_rut = "4";
@@ -27,14 +29,14 @@
       $in_sex = "4";
       $in_bet_id = "1";
 
-			$query = "insert into patient (
-    		pat_fname,
-        pat_lname,
-        pat_rut,
-        pat_rut_dv,
-        pat_age,
-        pat_sex,
-        bet_id ) values (
+      $sqlCanPat = "select count(1) from patient pat where pat.pat_rut = '" . $in_rut . "';";
+      $stmt = $this->conn->prepare($sqlCanPat);
+      $stmt->execute();
+
+      $val = $stmt->fetch(PDO::FETCH_ASSOC);
+
+      if ($val['count(1)'] == 0) {
+        $sqlPatAdd = "call patientAdd(
           {$in_fname},
           {$in_lname},
           {$in_rut},
@@ -42,12 +44,16 @@
           {$in_age},
           {$in_sex},
           {$in_bet_id});";
+        $stmt = $this->conn->prepare($sqlPatAdd);
+        $stmt->execute();
 
-			$stmt = $this->conn->prepare($query);
-
-			$stmt->execute();
-
-			return $stmt;
+      } else if ($val["count(1)"] == 1) {
+        $resp = array("out_cod" => "1000", "out_msg" => "Paciente ya existe ");
+      } else {
+        $resp = array("out_cod" => "1001", "out_msg" => "Error desconocido ");
+      }
+      
+			return $resp;
 		}
 	}
 ?>
