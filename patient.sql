@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 05-02-2018 a las 13:23:34
+-- Tiempo de generación: 06-02-2018 a las 14:50:06
 -- Versión del servidor: 5.7.21-0ubuntu0.16.04.1
 -- Versión de PHP: 7.0.22-0ubuntu0.16.04.1
 
@@ -43,8 +43,9 @@ CREATE TABLE `patient` (
 
 INSERT INTO `patient` (`pat_id`, `pat_fname`, `pat_lname`, `pat_rut`, `pat_rut_dv`, `pat_age`, `pat_sex`, `bet_id`) VALUES
 (2, '1', '1', '1', '1', 1, '1', 1),
-(4, '3', '3', '3', '3', 3, '3', 1),
-(9, '4', '4', '4', '4', 4, '4', 1);
+(47, 'Cristopher', 'Suárez', '16747661', '9', 30, 'Masculino', 1),
+(48, '2', '2', '2', '2', 2, 'Masculino', 1),
+(50, 'alan', 'asdf', '32t743238', '2', 2, 'Masculino', 1);
 
 --
 -- Índices para tablas volcadas
@@ -66,7 +67,7 @@ ALTER TABLE `patient`
 -- AUTO_INCREMENT de la tabla `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `pat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `pat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 --
 -- Restricciones para tablas volcadas
 --
