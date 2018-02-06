@@ -1,65 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Agrega</title>
+	<head>
+		<title>Agrega</title>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="../vendor/bootstrap/dist/css/bootstrap.min.css" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="../vendor/font-awesome/css/font-awesome.min.css">
+		
+		<script src="../vendor/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div class="container">
+			<form action="../model/query/patient-add.php" method="POST" id="patForm">
+				<div class="row">
+					<div class="col">
+						<h1>Nuevo Paciente</h1>
+					</div>	
+				</div>
 
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</head>
-<body>
-	<div class="container">
-		<input type="button" name="goIndex" value="Volver" onclick="window.location='http://localhost/php-modules';">
-
-		<form action="../model/query/patient-add.php" method="POST" >
-			<div class="form-group">
-				<label>Nombre</label>
-				<input type="text" class="form-control" name="patFName" placeholder="Ingrese Nombre">
-			</div>
-
-			<div class="form-group">
-				<label>Apellido</label>
-				<input type="text" class="form-control" name="patLName" placeholder="Ingrese Apellido">
-			</div>
-
-			<div class="form-group">
-				<label>Rut</label>
-				<div class="container-fluid">
-					<div class="row">
-						<input type="text" class="form-control col" name="patRut" placeholder="Ingrese RUT"> &nbsp; - &nbsp;
-						<input type="text" class="form-control col-1" name="patRutDV" placeholder="X">
+				<div class="row">
+					<div class="col">
+						<label>Nombre</label>
+						<input type="text" class="form-control" name="patFName" placeholder="Ingrese Nombre">
+					</div>
+					<div class="col">
+						<label>Apellido</label>
+						<input type="text" class="form-control" name="patLName" placeholder="Ingrese Apellido">
 					</div>
 				</div>
-			</div>
-
-			<div class="form-group">
-				<label>Edad</label>
-				<input type="text" class="form-control" name="patAge" placeholder="Ingrese Edad">
-			</div>
-
-			<div class="form-group">
-				<label>Sexualidad</label>
-				<input type="text" class="form-control" name="patSex" placeholder="Ingrese Sexualidad">
-				<!--select class="form-control" name="patSex">
-					<option value="Masculino">Masculino</option>
-					<option value="Femenino">Femenino</option>
-				</select-->
-			</div>
-
-			<div class="form-group">
-				<label>Tipo de beneficio</label>
-				<input type="text" class="form-control" name="patBenId" placeholder="Ingrese Tipo Beneficio">
-				<!--select class="form-control" name="patBenId">
-					<option value="1">Particular</option>
-				</select-->
-			</div>
-
-			<div class="form-group">
-				<input type="submit" name="enviar" value="Enviar">
-			</div>
-		</form>
-	</div>
-</body>
+				
+				<div class="row">
+					<div class="col">
+						<label>RUT</label>
+						<div class="container-fluid">
+							<div class="row">
+								<input type="text" class="form-control col" name="patRut" placeholder="Ingrese RUT"> &nbsp; - &nbsp;
+								<input type="text" class="form-control col-1" name="patRutDV" placeholder="X">
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<label>Edad</label>
+						<input type="text" class="form-control" name="patAge" placeholder="Ingrese Edad">
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col">
+						<label>Sexualidad</label>
+						<select class="form-control" form="patForm" name="patSex">
+							<option value="Masculino" selected>Masculino</option>
+							<option value="Femenino">Femenino</option>
+						</select>
+					</div>
+					<div class="col">
+						<label>Tipo de beneficio</label>
+						<select class="form-control" form="patForm" name="patBenId">
+							<option value="1" selected>Particular</option>
+						</select>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col">
+						<br>
+						<input type="button" name="goIndex" value="Volver" onclick="window.location='http://localhost/php-modules';">
+					</div>
+					<div class="col">
+						<br>
+						<input type="submit" name="enviar" value="Enviar">
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
 </html>
