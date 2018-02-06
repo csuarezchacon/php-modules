@@ -12,7 +12,7 @@
 <body>
 	<div class="container">
 		<input type="button" name="goIndex" value="Volver" onclick="window.location='http://localhost/php-modules';">
-		
+
 		<form action="../model/query/patient-add.php" method="POST" >
 			<div class="form-group">
 				<label>Nombre</label>
@@ -41,10 +41,19 @@
 
 			<div class="form-group">
 				<label>Sexualidad</label>
-				<select class="form-control" default>
-					<option>Masculino</option>
-					<option>Femenino</option>
-				</select>
+				<input type="text" class="form-control" name="patSex" placeholder="Ingrese Sexualidad">
+				<!--select class="form-control" name="patSex">
+					<option value="Masculino">Masculino</option>
+					<option value="Femenino">Femenino</option>
+				</select-->
+			</div>
+
+			<div class="form-group">
+				<label>Tipo de beneficio</label>
+				<input type="text" class="form-control" name="patBenId" placeholder="Ingrese Tipo Beneficio">
+				<!--select class="form-control" name="patBenId">
+					<option value="1">Particular</option>
+				</select-->
 			</div>
 
 			<div class="form-group">

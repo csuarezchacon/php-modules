@@ -19,15 +19,15 @@
 
 		function add(){
 
-      $resp = array("out_cod" => "0000", "out_msg" => "Registrado");
-      
-      $in_fname = "4";
-      $in_lname = "4";
-      $in_rut = "4";
-      $in_rut_dv = "4";
-      $in_age = "4";
-      $in_sex = "4";
-      $in_bet_id = "1";
+		$in_fname = $_POST['patFName'];
+		$in_lname = $_POST['patLName'];
+		$in_rut = $_POST['patRut'];
+		$in_rut_dv = $_POST['patRutDV'];
+		$in_age = $_POST['patAge'];
+		$in_sex = $_POST['patSex'];
+		$in_bet_id = $_POST['patBenId'];
+
+      $resp = array("out_cod" => "0000", "out_msg" => "Registrado " . $in_fname);
 
       $sqlCanPat = "select count(1) from patient pat where pat.pat_rut = '" . $in_rut . "';";
       $stmt = $this->conn->prepare($sqlCanPat);
@@ -52,7 +52,7 @@
       } else {
         $resp = array("out_cod" => "1001", "out_msg" => "Error desconocido ");
       }
-      
+
 			return $resp;
 		}
 	}
