@@ -6,15 +6,34 @@
 
 		<link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
 		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-		<script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="vendor/angular/angular.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 
-		<script type="text/javascript" src="patient-add/patient-add.js"></script>
+		<!--script type="text/javascript" src="patient-add/patient-add.js"></script-->
+		<script type="text/javascript" src="index_controller.js"></script>
 	</head>
 	<body>
-		<div class="container">
-			<input type="button" value="Agrega paciente" onclick="window.location = 'http://localhost/php-modules/patient-add/patient-add.html';">
+		<div ng-app="App" ng-controller="IndexController">
+			<!--div class="container"-->
+				<!--p>Name: <input type="text" ng-model="saludo"></p-->
+				{{saludo}}
+				<!--input type="button" value="Agrega paciente" data-toggle="modal" data-target="#patient-add-modal">
+
+				<div class="modal fade" id="patient-add-modal" role="dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-body">
+								<p>Some text in the modal.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div-->
+			<!--/div-->
 		</div>
 	</body>
 </html>
