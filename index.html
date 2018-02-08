@@ -5,20 +5,25 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 		<link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
-		
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<script type="text/javascript" src="vendor/jquery/dist/jquery.min.js"></script>
 		<script type="text/javascript" src="vendor/angular/angular.min.js"></script>
+		<script type="text/javascript" src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 
-		<!--script type="text/javascript" src="patient-add/patient-add.js"></script-->
-		<script type="text/javascript" src="index_controller.js"></script>
+		<script type="text/javascript" src="index_module.js"></script>
+		<script type="text/javascript" src="index_config.js"></script>
+
+		<script type="text/javascript" src="www/pages/home/home_controller.js"></script>
 	</head>
 	<body>
-		<div ng-app="App" ng-controller="IndexController">
+		<div ng-app="php-modules">
+			<div class="container">
+				<div ui-view></div>
+			</div>
 			<!--div class="container"-->
 				<!--p>Name: <input type="text" ng-model="saludo"></p-->
-				{{saludo}}
 				<!--input type="button" value="Agrega paciente" data-toggle="modal" data-target="#patient-add-modal">
 
 				<div class="modal fade" id="patient-add-modal" role="dialog">
