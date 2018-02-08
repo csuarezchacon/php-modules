@@ -12,6 +12,10 @@
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 
+		<script type="text/javascript" src="www/directive/patient-add/patient-add_module.js"></script>
+		<script type="text/javascript" src="www/directive/patient-add/patient-add_controller.js"></script>
+		<script type="text/javascript" src="www/directive/patient-add/patient-add_directive.js"></script>
+
 		<script type="text/javascript" src="index_module.js"></script>
 		<script type="text/javascript" src="index_config.js"></script>
 
@@ -20,8 +24,16 @@
 	<body>
 		<div ng-app="php-modules">
 			<div class="container">
-				<div ui-view></div>
+				<h3>Saludos terricolas</h3>
 			</div>
+
+			<patient-add></patient-add>
+			<!--div class="container" ui-sref="/home">
+				<h3>Saludos terricolas</h3>
+			</div>
+			<div class="container">
+				<div ui-view></div>
+			</div-->
 		</div>
 	</body>
 </html>
