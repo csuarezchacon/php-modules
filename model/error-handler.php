@@ -1,36 +1,51 @@
 <?php
-	function errorHandler($errCode) {
-		switch ($errCode->errorInfo[1]) {
+	function errorHandler($err) {
+		switch ($err->errorInfo[1]) {
 			case 1452:
-				$errMsg = "Error por llave foranea";
+				$error = array(
+					'errCod' => $err->errorInfo[1],
+					'errMsg' => 'Error por llave foranea'
+				);
 				break;
 			case 1062:
-				$errMsg = "Ya existe el registro";
+				$error = array(
+					'errCod' => $err->errorInfo[1],
+					'errMsg' => 'Ya existe el registro'
+				);
 				break;
 			case 1048:
-				/*$colPosIni = strpos($errCode->errorInfo[2] ,"'") + 1;
-					$colPosFin = strpos($errCode->errorInfo[2] ,"'", $colPosIni) - $colPosIni;
-					$colName = substr($errCode->errorInfo[2], $colPosIni, $colPosFin);
+				/*$colPosIni = strpos($err->errorInfo[2] ,"'") + 1;
+					$colPosFin = strpos($err->errorInfo[2] ,"'", $colPosIni) - $colPosIni;
+					$colName = substr($err->errorInfo[2], $colPosIni, $colPosFin);
 				
-					$errMsg = "Campo '$colName' no puede estar vacío";*/
-				$errMsg = "Campo no puede estar vacío";
+					$error = "Campo '$colName' no puede estar vacío";*/
+				$error = array(
+					'errCod' => $err->errorInfo[1],
+					'errMsg' => 'Campo no puede estar vacío'
+				);
+				break;
+			case 1146:
+				$error = array(
+					'errCod' => $err->errorInfo[1],
+					'errMsg' => 'Tabla no existe'
+				);
 				break;
 			/*case 0:
-				$errMsg = "";
+				$error = "";
 				break;
-				case 0:
-					$errMsg = "";
-					break;
-				case 0:
-					$errMsg = "";
-					break;
-				case 0:
-					$errMsg = "";
-					break;*/
+			case 0:
+				$error = "";
+				break;
+			case 0:
+				$error = "";
+				break;*/
 			default:
-				$errMsg = "Error no catalogado: " . json_encode($errCode);
+				$error = array(
+					'errCod' => $err->errorInfo[1],
+					'errMsg' => 'Error no catalogado: ' . json_encode($err)
+				);
 		}
 
-		return $errMsg;
+		return $error;
 	}
 ?>

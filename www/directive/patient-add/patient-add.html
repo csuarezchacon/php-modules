@@ -50,8 +50,8 @@
 					</div>
 					<div class="col">
 						<label>Tipo de beneficio</label>
-						<select class="form-control" form="patForm" name="patBenId" ng-model="vm.patBenId">
-							<option value="1" selected>Particular</option>
+						<select class="form-control" ng-model="vm.patBenId">
+							<option ng-repeat="x in vm.benefitList" value="{{x.bet_id}}">{{x.bet_name}}</option>
 						</select>
 					</div>
 				</div>
