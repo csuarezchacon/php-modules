@@ -1,5 +1,5 @@
 <div class="container">
-	<input type="button" value="Agrega paciente" data-toggle="modal" data-backdrop="static" data-target="#patient-add-modal">
+	<input type="button" value="Agrega paciente" data-toggle="modal" data-backdrop="static" data-target="#patient-add-modal" ng-click="vm.clearForm();">
 
 	<div class="modal fade" id="patient-add-modal" role="dialog">
 		<div class="modal-dialog">
@@ -30,7 +30,7 @@
 						<div class="container-fluid">
 							<div class="row">
 								<input type="text" class="form-control col" name="patRut" ng-model="vm.patRut" placeholder="Ingrese RUT"> &nbsp; - &nbsp;
-								<input type="text" class="form-control col-1" name="patRutDV" ng-model="vm.patRutDV" placeholder="X">
+								<input type="text" class="form-control col-2" name="patRutDV" ng-model="vm.patRutDV" placeholder="X">
 							</div>
 						</div>
 					</div>
@@ -43,9 +43,8 @@
 				<div class="row">
 					<div class="col">
 						<label>Sexualidad</label>
-						<select class="form-control" form="patForm" name="patSex" ng-model="vm.patSex">
-							<option value="Masculino" selected>Masculino</option>
-							<option value="Femenino">Femenino</option>
+						<select class="form-control" ng-model="vm.patSex">
+							<option ng-repeat="x in vm.sexList" value="{{x.id}}">{{x.value}}</option>
 						</select>
 					</div>
 					<div class="col">
